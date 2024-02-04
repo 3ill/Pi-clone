@@ -12,7 +12,7 @@ const Footer = () => {
               <a
                 href={link.link}
                 target="_blank"
-                className="text-[16px] lg:text-[20px] hover:animate-pulse hover:text-gray-400 font-semibold"
+                className="text-[16px] font-work lg:text-[20px] hover:animate-pulse hover:text-gray-400 font-medium"
               >
                 {link.name}
               </a>
@@ -26,7 +26,7 @@ const Footer = () => {
               <a
                 href={link.link}
                 target="_blank"
-                className="text-[16px] lg:text-[20px] hover:animate-pulse hover:text-gray-400 font-semibold"
+                className="text-[16px] lg:text-[20px] hover:animate-pulse hover:text-gray-400 font-medium font-work"
               >
                 {link.name}
               </a>

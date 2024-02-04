@@ -40,13 +40,18 @@ const Navbar = () => {
         whileInView="show"
         className="padding-x py-4 flex flex-row  items-center  "
       >
-        <Image
-          src="/Pi-Network.webp"
-          alt="Pi-Network"
-          width={300}
-          height={300}
-          className=" w-[100px] md:w-[100px] lg:w-[300px]"
-        />
+        <a
+          href="/"
+          className=" hover:scale-105 active:scale-100 transition-all duration-200 hover:text-white cursor-pointer"
+        >
+          <Image
+            src="/Pi-Network.webp"
+            alt="Pi-Network"
+            width={300}
+            height={300}
+            className=" w-[100px] md:w-[100px] lg:w-[300px]"
+          />
+        </a>
         <div className="hidden sm:hidden md:hidden lg:flex flex-row gap-3 text-gray-200 font-lexend ml-[500px]">
           {navLinks.map((link) => (
             <React.Fragment key={link.name}>
@@ -79,7 +84,7 @@ const Navbar = () => {
         </div>
 
         {/**Mobile nav */}
-        <div className="flex flex-row ml-[250px] md:ml-[500px] items-center  lg:hidden  gap-7 ">
+        <div className="flex flex-row ml-[150px] md:ml-[500px] items-center  lg:hidden  gap-7 ">
           <Search color="white" className="w-7 h-7" />
           <Menu color="white" className="w-7 h-7" />
         </div>

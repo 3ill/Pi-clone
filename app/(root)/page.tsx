@@ -8,15 +8,21 @@ import { TitleText, TypingText } from '@/components/CustomTexts';
 import MiningCards from '@/components/MiningCards';
 import Footer from '@/components/Footer';
 import DownloadSection from '@/components/DownloadSection';
+import { useRouter } from 'next/navigation';
 
 const Landing = () => {
+  const router = useRouter();
+
+  const navigate = () => {
+    router.push('/validate');
+  };
   return (
     <motion.div
       variants={staggerContainer(0.1, 0.1)}
       initial="hidden"
       whileInView="show"
       viewport={{ once: false, amount: 0.25 }}
-      className=" text-white text-4xl lg:text-6xl relative "
+      className=" text-white text-4xl lg:text-6xl relative overflow-x-hidden "
     >
       <div className="flex flex-row lg:min-h-screen padding-x bg-banner bg-cover bg-no-repeat ">
         <div className="flex flex-col gap-3">
@@ -28,17 +34,20 @@ const Landing = () => {
             variants={slideIn('up', 'tween', 0.5, 0.75)}
             initial="hidden"
             whileInView="show"
-            className="text-[18px] sm:text-[20px] tracking-wide mt-[50px] leading-7 font-bold"
+            className="text-[18px] sm:text-[20px] font-work tracking-wide mt-[25px] sm:mt-[30px] leading-7 font-semibold"
           >
             Start mining Pi cryptocurrency today with our free, energy-light{' '}
             <br />
             mobile app!
           </motion.p>
 
-          <button className=" flex flex-row items-center gap-5 border-2 border-yellow-400 rounded-md px-8 py-2 lg:py-5 lg:mt-5 font-bold text-yellow-400 hover:scale-110 active:scale-100 group hover:text-white transition-all duration-200 max-w-[300px] text-[18px] ">
+          <button
+            className=" flex flex-row items-center gap-5 border-2 border-yellow-400 rounded-md px-8 py-2 lg:py-5 lg:mt-5 font-bold text-yellow-400 hover:scale-110 active:scale-100 group hover:text-white transition-all duration-200 max-w-[300px] text-[18px]"
+            onClick={navigate}
+          >
             <TypingText
               title="validate your wallet"
-              textStyles="text-yellow-400 hover:text-white transition-all duration-200"
+              textStyles="text-yellow-400 hover:text-white font-work font-medium tracking-wide transition-all duration-200"
             />
             <Check
               color="yellow"
@@ -59,7 +68,7 @@ const Landing = () => {
       {/* YouTube video embed */}
       <div className="video-container padding-x lg:hidden md:flex sm:flex mt-5">
         <iframe
-          width="560"
+          width="500"
           height="315"
           src="https://www.youtube.com/embed/MsOaC61cR3U"
           title="YouTube video player"
@@ -76,7 +85,7 @@ const Landing = () => {
             variants={slideIn('up', 'spring', 0.5, 0.75)}
             initial="hidden"
             whileInView="show"
-            className="tracking-wide"
+            className="tracking-wide font-Azeret text-[14px] sm:text-[24px] font-semibold"
           >
             Mining crypto is hard
           </motion.p>
@@ -84,7 +93,7 @@ const Landing = () => {
             variants={slideIn('up', 'spring', 0.6, 0.75)}
             initial="hidden"
             whileInView="show"
-            className="tracking-wide"
+            className="tracking-wide font-Azeret text-[14px] sm:text-[24px] font-semibold"
           >
             Investing crypto is risky
           </motion.p>
@@ -93,7 +102,7 @@ const Landing = () => {
             variants={slideIn('up', 'spring', 0.7, 0.75)}
             initial="hidden"
             whileInView="show"
-            className="tracking-wide"
+            className="tracking-wide font-Azeret text-[14px] sm:text-[24px] font-semibold"
           >
             Too many of us are left out of <br /> the cryptocurrency revolution
           </motion.p>
@@ -116,7 +125,7 @@ const Landing = () => {
             <h3 className=" text-4xl lg:text-5xl font-lexend font-bold  text-purple-600 tracking-wide">
               Pi makes crypto <br className="hidden lg:block" /> mining easy.
             </h3>
-            <p className=" text-gray-700 text-[18px] lg:text-[20px] font-semibold leading-7">
+            <p className=" text-gray-700 text-[18px] lg:text-[20px] font-semibold font-work leading-7">
               Breakthrough tech allows you to mine Pi on your phone without{' '}
               <br className="hidden md:block lg:hidden" />
               draining your battery.
@@ -128,7 +137,7 @@ const Landing = () => {
             >
               <TypingText
                 title="Learn the tech behind pi"
-                textStyles="text-white hover:text-white transition-all duration-200 capitalize"
+                textStyles="text-white hover:text-white font-work font-medium tracking-wide transition-all duration-200 capitalize"
               />
               <CornerDownRight
                 color="white"
@@ -137,7 +146,7 @@ const Landing = () => {
             </a>
           </div>
         </div>
-        <div className="flex flex-col px-[50px] md:px-[200px] lg:px-0 lg:flex-row gap-5 mt-[100px] pb-5">
+        <div className="flex flex-col justify-center items-center  md:px-[200px] lg:px-0 lg:flex-row gap-5 mt-[100px] pb-5">
           <MiningCards
             index={1 as number}
             icon="/Spinner.png"

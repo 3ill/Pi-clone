@@ -31,16 +31,14 @@ const DownloadSection = () => {
             Download the mobile app <br /> to start mining today! Join now.
           </motion.h3>
 
-          <motion.p
-            variants={slideIn('up', 'tween', 1, 0.75)}
-            initial="hidden"
-            whileInView={`show`}
-            className=" text-white text-[16px] sm:text-[18px] lg:text-[20px] font-semibold leading-7 self-center  tracking-wide "
+          <p
+            
+            className=" text-white text-[16px] sm:text-[18px] lg:text-[20px] font-medium leading-7 self-center font-work  tracking-wide "
           >
             Keep your money! Mining Pi is free. <br /> All you need is an
             invitation from an existing trusted member on the network. <br /> If
             you have an invitation you can download the mobile app below.{' '}
-          </motion.p>
+          </p>
 
           <a
             href="https://play.google.com/store/apps/details?id=com.blockchainvault&pli=1"

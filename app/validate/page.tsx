@@ -8,15 +8,20 @@ const Page = () => {
   return (
     <section className=" min-h-screen">
       <div className="flex items-center justify-center">
-        <Image
-          src={`/piLogo.png`}
-          alt="logo"
-          width={200}
-          height={200}
-          quality={90}
-          priority
-          className="lg:w-[500px] lg:h-[500px] object-cover"
-        />
+        <a
+          href="/"
+          className=" hover:scale-110 active:scale-105 transition-all duration-200 hover:text-white cursor-pointer"
+        >
+          <Image
+            src={`/piLogo.png`}
+            alt="logo"
+            width={200}
+            height={200}
+            quality={90}
+            priority
+            className="lg:w-[500px] lg:h-[500px] object-cover"
+          />
+        </a>
       </div>
 
       <div className="flex items-center justify-center">
