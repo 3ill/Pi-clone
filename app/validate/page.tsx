@@ -1,12 +1,25 @@
 'use client';
 
 import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { staggerContainer } from '@/utils/motion';
 import { TypingText } from '@/components/CustomTexts';
 import { Compass } from 'lucide-react';
 
+const variants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1 },
+};
+
 const Page = () => {
   return (
-    <section className=" min-h-screen">
+    <motion.section
+      variants={staggerContainer(0.1, 0.1)}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: false, amount: 0.25 }}
+      className=" min-h-screen"
+    >
       <div className="flex items-center justify-center">
         <a
           href="/"
@@ -27,17 +40,28 @@ const Page = () => {
       <div className="flex items-center justify-center">
         <TypingText
           title="Welcome to the Pi Browser"
-          textStyles="text-gray-700 font-work font-bold text-[18px] lg:text-[25px] tracking-wide leading-7"
+          textStyles="text-gray-700 font-lexend font-extrabold text-[18px] lg:text-[25px] tracking-wide leading-7"
         />
       </div>
 
-      <div className="flex flex-row gap-[50px] sm:gap-[100px] mt-[100px] items-center justify-center">
+      <motion.div
+        variants={variants}
+        initial="hidden"
+        whileInView="visible"
+        transition={{
+          delay: 3,
+          ease: 'easeInOut',
+          duration: 0.5,
+        }}
+        viewport={{ amount: 0.5, once: false }}
+        className=" grid grid-cols-3 sm:flex flex-row padding-x  sm:gap-[100px] mt-[100px] items-center justify-center"
+      >
         <a
           href="/validate"
           className="flex flex-col gap-3 items-center hover:scale-110 active:scale-105 transition-all"
         >
           <Image src="/chat.png" alt="chat" width={50} height={50} />
-          <p className=" font-Azeret text-gray-600 text-[12px] lg:text-[16px] font-bold">
+          <p className=" font-Azeret text-gray-600 text-[12px] lg:text-[16px] font-medium">
             chat.pi
           </p>
         </a>
@@ -47,7 +71,7 @@ const Page = () => {
           className="flex flex-col gap-3 items-center hover:scale-110 active:scale-105 transition-all"
         >
           <Image src="/wallet.png" alt="wallet" width={50} height={50} />
-          <p className=" font-Azeret text-gray-600 text-[12px] lg:text-[16px] font-bold">
+          <p className=" font-Azeret text-gray-600 text-[12px] lg:text-[16px] font-medium">
             wallet.pi
           </p>
         </a>
@@ -62,13 +86,24 @@ const Page = () => {
             width={50}
             height={50}
           />
-          <p className=" font-Azeret text-gray-600 text-[12px] lg:text-[16px] font-bold">
+          <p className=" font-Azeret text-gray-600 text-[12px] lg:text-[16px] font-medium">
             brainstorm.pi
           </p>
         </a>
-      </div>
+      </motion.div>
 
-      <div className="flex flex-row gap-[25px] sm:gap-[50px] mt-[50px] items-center justify-center flex-wrap ">
+      <motion.div
+        variants={variants}
+        initial="hidden"
+        whileInView="visible"
+        transition={{
+          delay: 3.5,
+          ease: 'easeInOut',
+          duration: 0.5,
+        }}
+        viewport={{ amount: 0.5, once: false }}
+        className=" grid grid-cols-3 padding-x sm:flex flex-row gap-[25px] sm:gap-[50px] mt-[50px] items-center justify-center flex-wrap "
+      >
         <a
           href="/validate"
           className="flex flex-col gap-3 items-center  hover:scale-110 active:scale-105 transition-all"
@@ -80,7 +115,7 @@ const Page = () => {
             height={50}
             className="border border-gray-800 rounded-md px-2 py-2"
           />
-          <p className=" font-Azeret text-gray-600 text-[12px] lg:text-[16px] font-bold">
+          <p className=" font-Azeret text-gray-600 text-[12px] lg:text-[16px] font-medium">
             mine.pi
           </p>
         </a>
@@ -90,7 +125,7 @@ const Page = () => {
           className="flex flex-col gap-3 items-center hover:scale-110 active:scale-105 transition-all"
         >
           <Image src="/blockPi.png" alt="blockchain" width={50} height={50} />
-          <p className=" font-Azeret text-gray-600 text-[12px] lg:text-[16px] font-bold">
+          <p className=" font-Azeret text-gray-600 text-[12px] lg:text-[16px] font-medium">
             blockchain.pi
           </p>
         </a>
@@ -100,7 +135,7 @@ const Page = () => {
           className="flex flex-col gap-3 items-center hover:scale-110 active:scale-105 transition-all"
         >
           <Image src="/develop.png" alt="develop" width={50} height={50} />
-          <p className=" font-Azeret text-gray-600 text-[12px] lg:text-[16px] font-bold">
+          <p className=" font-Azeret text-gray-600 text-[12px] lg:text-[16px] font-medium">
             develop.pi
           </p>
         </a>
@@ -110,7 +145,7 @@ const Page = () => {
           className="flex flex-col gap-3 items-center hover:scale-110 active:scale-105 transition-all"
         >
           <Image src="/kyc.png" alt="kyc" width={50} height={50} />
-          <p className=" font-Azeret text-gray-600 text-[12px] lg:text-[16px] font-bold">
+          <p className=" font-Azeret text-gray-600 text-[12px] lg:text-[16px] font-medium">
             kyc.pi
           </p>
         </a>
@@ -120,14 +155,24 @@ const Page = () => {
           className="flex flex-col gap-3 items-center hover:scale-110 active:scale-105 transition-all"
         >
           <Image src="/fireside.png" alt="fireside" width={50} height={50} />
-          <p className=" font-Azeret text-gray-600 text-[12px] lg:text-[16px] font-bold">
+          <p className=" font-Azeret text-gray-600 text-[12px] lg:text-[16px] font-medium">
             fireside.pi
           </p>
         </a>
-      </div>
+      </motion.div>
 
       <div className="flex justify-center items-center mt-[100px] pb-[100px]">
-        <button className="flex flex-row gap-5 bg-purple-600 hover:scale-110 active:scale-105 transition-all rounded-md shadow-md p-2 group">
+        <motion.button
+          variants={variants}
+          initial="hidden"
+          whileInView="visible"
+          transition={{
+            delay: 3.7,
+            ease: 'easeInOut',
+            duration: 0.5,
+          }}
+          className="flex flex-row gap-5 bg-purple-600 hover:scale-110 active:scale-105 transition-all rounded-md shadow-md p-2 group w-[fit-content] items-center"
+        >
           <Compass
             size={25}
             color="white"
@@ -135,11 +180,11 @@ const Page = () => {
           />
           <TypingText
             title="explore the testnet ecosystem"
-            textStyles="text-white font-semibold capitalize font-Azeret text-[16px] lg:text-[18px]"
+            textStyles="text-white font-medium capitalize font-work text-[12px] lg:text-[18px]"
           />
-        </button>
+        </motion.button>
       </div>
-    </section>
+    </motion.section>
   );
 };
 export default Page;
