@@ -34,13 +34,15 @@ const Footer = () => {
           ))}
         </div>
 
-        <Image
-          src="/Pi-Network.webp"
-          alt="Pi-Network"
-          width={500}
-          height={300}
-          className=" w-[300px] hidden lg:flex "
-        />
+        <div>
+          <Image
+            src="/Pi-Network.webp"
+            alt="Pi-Network"
+            width={500}
+            height={300}
+            className=" w-[300px] hidden lg:flex "
+          />
+        </div>
       </div>
 
       <div className="mt-[50px] ">
