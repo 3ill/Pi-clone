@@ -167,7 +167,7 @@ const Page = () => {
           initial="hidden"
           whileInView="visible"
           transition={{
-            delay: 3.7,
+            delay: 3,
             ease: 'easeInOut',
             duration: 0.5,
           }}
