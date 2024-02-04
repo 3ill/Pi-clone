@@ -19,6 +19,7 @@ const config: Config = {
         serif: ['ui-serif', 'Georgia'],
         inter: ['Inter', 'sans-serif'],
         lexend: ['Lexend Deca', 'sans-serf'],
+        Azeret: ['Azeret Mono', 'Monospace'],
       },
     },
   },
