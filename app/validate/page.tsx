@@ -162,17 +162,7 @@ const Page = () => {
       </motion.div>
 
       <div className="flex justify-center items-center mt-[100px] pb-[100px]">
-        <motion.button
-          variants={variants}
-          initial="hidden"
-          whileInView="visible"
-          transition={{
-            delay: 3,
-            ease: 'easeInOut',
-            duration: 0.5,
-          }}
-          className="flex flex-row gap-5 bg-purple-600 hover:scale-110 active:scale-105 transition-all rounded-md shadow-md p-2 group w-[fit-content] items-center"
-        >
+        <button className="flex flex-row gap-5 bg-purple-600 hover:scale-110 active:scale-105 transition-all rounded-md shadow-md p-2 group w-[fit-content] items-center">
           <Compass
             size={25}
             color="white"
@@ -182,7 +172,7 @@ const Page = () => {
             title="explore the testnet ecosystem"
             textStyles="text-white font-medium capitalize font-work text-[12px] lg:text-[18px]"
           />
-        </motion.button>
+        </button>
       </div>
     </motion.section>
   );
