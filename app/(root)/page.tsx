@@ -7,6 +7,7 @@ import { Check, CornerDownRight } from 'lucide-react';
 import { TitleText, TypingText } from '@/components/CustomTexts';
 import MiningCards from '@/components/MiningCards';
 import Footer from '@/components/Footer';
+import DownloadSection from '@/components/DownloadSection';
 
 const Landing = () => {
   return (
@@ -34,7 +35,7 @@ const Landing = () => {
             mobile app!
           </motion.p>
 
-          <button className=" flex flex-row items-center gap-5 border-2 border-yellow-400 rounded-md px-8 py-2 lg:py-5 lg:mt-3 font-bold text-yellow-400 hover:scale-110 active:scale-100 group hover:text-white transition-all duration-200 max-w-[300px] text-[18px] ">
+          <button className=" flex flex-row items-center gap-5 border-2 border-yellow-400 rounded-md px-8 py-2 lg:py-5 lg:mt-5 font-bold text-yellow-400 hover:scale-110 active:scale-100 group hover:text-white transition-all duration-200 max-w-[300px] text-[18px] ">
             <TypingText
               title="validate your wallet"
               textStyles="text-yellow-400 hover:text-white transition-all duration-200"
@@ -159,53 +160,7 @@ const Landing = () => {
       </section>
 
       {/**Download section */}
-      <section className="downloadGradient flex flex-col pb-5 ">
-        <div className="flex flex-col lg:flex-row lg:px-[300px] gap-5 lg:gap-[100px] ">
-          <Image
-            src="/download.webp"
-            alt="phone"
-            width={200}
-            height={200}
-            className="self-center"
-          />
-
-          <div className="flex flex-col gap-5 mt-[50px] padding-x md:px-[100px]">
-            <h3 className=" font-lexend text-[24px] sm:text-[32px] lg:text-[50px]  text-yellow-300 ">
-              Download the mobile app <br /> to start mining today! Join now.
-            </h3>
-
-            <p className=" text-white text-[16px] sm:text-[18px] lg:text-[20px] font-semibold leading-7 self-center  tracking-wide ">
-              Keep your money! Mining Pi is free. <br /> All you need is an
-              invitation from an existing trusted member on the network. <br />{' '}
-              If you have an invitation you can download the mobile app below.{' '}
-            </p>
-
-            <a
-              href="https://play.google.com/store/apps/details?id=com.blockchainvault&pli=1"
-              target="_blank"
-            >
-              <Image
-                src="/google_play.webp"
-                alt="google_play"
-                width={300}
-                height={89}
-              />
-            </a>
-
-            <a
-              href="https://apps.apple.com/us/app/pi-network/id1445472541"
-              target="_blank"
-            >
-              <Image
-                src="/apple_store.webp"
-                alt="google_play"
-                width={300}
-                height={89}
-              />
-            </a>
-          </div>
-        </div>
-      </section>
+      <DownloadSection />
 
       {/**Footer */}
       <Footer />

@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import Navbar from '@/components/Navbar';
 
 export const metadata: Metadata = {
   title: 'Pi-Network',
@@ -14,15 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body
-        style={{
-          backgroundImage: `url('/background.png')`,
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
-          zIndex: -10,
-        }}
-      >
-        <Navbar />
+      <body>
         <main>{children}</main>
       </body>
     </html>
