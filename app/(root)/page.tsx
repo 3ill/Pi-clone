@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { staggerContainer, slideIn } from '@/utils/motion';
 import Image from 'next/image';
 import { Check, CornerDownRight } from 'lucide-react';
@@ -9,9 +9,18 @@ import MiningCards from '@/components/MiningCards';
 import Footer from '@/components/Footer';
 import DownloadSection from '@/components/DownloadSection';
 import { useRouter } from 'next/navigation';
+import MobileNav from '@/components/MobileNav';
+import { useActiveContext } from '@/context/active-context';
+import { cn } from '@/lib';
 
 const Landing = () => {
   const router = useRouter();
+  const { hamburgerClicked } = useActiveContext();
+
+  const variants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
+  };
 
   const navigate = () => {
     router.push('/validate');
@@ -24,6 +33,27 @@ const Landing = () => {
       viewport={{ once: false, amount: 0.25 }}
       className=" text-white text-4xl lg:text-6xl relative overflow-x-hidden "
     >
+      <AnimatePresence>
+        {hamburgerClicked && (
+          <motion.div
+            variants={variants}
+            initial="hidden"
+            whileInView="visible"
+            exit="hidden"
+            transition={{
+              delay: 0.1,
+              ease: 'easeInOut',
+              duration: 0.5,
+            }}
+            className={cn(
+              !hamburgerClicked ? 'easeOut' : '',
+              'absolute top-0 z-50 w-full'
+            )}
+          >
+            <MobileNav />
+          </motion.div>
+        )}
+      </AnimatePresence>
       <div className="flex flex-row lg:min-h-screen padding-x bg-banner bg-cover bg-no-repeat ">
         <div className="flex flex-col gap-3">
           <TitleText
@@ -61,7 +91,7 @@ const Landing = () => {
           alt="phone"
           width={500}
           height={500}
-          className="hidden lg:flex absolute left-[1370px]  -top-[90px] "
+          className="hidden lg:flex absolute left-[1370px] z-50  -top-[60px] "
         />
       </div>
 
