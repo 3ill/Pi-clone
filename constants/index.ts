@@ -1,5 +1,5 @@
 import React from 'react'
-import { X, Facebook, Instagram, Youtube } from 'lucide-react'
+import { Twitter, Facebook, Instagram, Youtube } from 'lucide-react'
 
 export const navLinks = [
   {
@@ -7,7 +7,7 @@ export const navLinks = [
     link: '/',
   },
   {
-    name: 'Developers',
+    name: 'Pi Developers',
     link: '/developers',
   },
   {
@@ -49,22 +49,22 @@ export const PiDeveloper = [
 export const socialLinks = [
   {
     name: 'twitter',
-    link: '',
-    icon: React.createElement(X),
+    link: 'https://twitter.com/PiCoreTeam',
+    icon: React.createElement(Twitter),
   },
   {
     name: 'facebook',
-    link: '',
+    link: 'https://web.facebook.com/PiCoreTeam/',
     icon: React.createElement(Facebook),
   },
   {
     name: 'youtube',
-    link: '',
+    link: 'https://www.youtube.com/c/PiCoreTeam',
     icon: React.createElement(Youtube),
   },
   {
     name: 'instagram',
-    link: '',
+    link: 'https://www.instagram.com/pi_network/',
     icon: React.createElement(Instagram),
   },
 ]
