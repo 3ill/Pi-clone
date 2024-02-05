@@ -42,7 +42,7 @@ const Landing = () => {
           </motion.p>
 
           <button
-            className=" flex flex-row items-center gap-5 border-2 border-yellow-400 rounded-md px-8 py-2 lg:py-5 lg:mt-5 font-bold text-yellow-400 hover:scale-110 active:scale-100 group hover:text-white transition-all duration-200 max-w-[300px] text-[18px]"
+            className=" flex flex-row items-center gap-5 border-2 border-yellow-400 rounded-md px-8 py-2 lg:py-5 lg:mt-5 font-bold text-yellow-400 hover:scale-110 active:scale-100 group hover:text-white transition-all duration-200 w-[fit-content] text-[18px]"
             onClick={navigate}
           >
             <TypingText
@@ -133,7 +133,7 @@ const Landing = () => {
             <a
               href="https://minepi.com/white-paper/"
               target="_blank"
-              className=" flex flex-row items-center gap-5 border-2 bg-purple-600 shadow-sm rounded-md px-8 py-2 lg:py-5 lg:mt-3 font-bold hover:scale-110 active:scale-100 group hover:text-white transition-all duration-200 max-w-[350px] text-[18px] "
+              className=" flex flex-row items-center gap-5 border-2 bg-purple-600 shadow-sm rounded-md px-8 py-2 lg:py-5 lg:mt-3 font-bold hover:scale-110 active:scale-100 group hover:text-white transition-all duration-200 w-[fit-content] text-[18px] "
             >
               <TypingText
                 title="Learn the tech behind pi"
