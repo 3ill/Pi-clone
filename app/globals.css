@@ -104,3 +104,19 @@ a.relative:hover::after {
     #ee609c 100%
   );
 }
+
+@keyframes slideOut {
+  0% {
+    transform: translateX(0); /* Start from the original position */
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(100%); /* Move to the left of the screen */
+    opacity: 1;
+  }
+}
+
+/* Apply the animation to a specific class */
+.easeOut {
+  animation: slideOut 0.75s ease-out forwards; /* 2 seconds duration, ease-out timing function */
+}
