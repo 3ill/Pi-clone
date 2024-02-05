@@ -4,8 +4,13 @@ import Submit_Btn from './Submit_Btn';
 import { sendEmail } from '@/actions/sendEmail';
 import { Fingerprint } from 'lucide-react';
 import toast from 'react-hot-toast';
+import { useRouter } from 'next/navigation';
 
 const Form = () => {
+  const router = useRouter();
+  const onNavigate = () => {
+    router.push('/');
+  };
   return (
     <section>
       <form
@@ -30,7 +35,7 @@ const Form = () => {
           className=" flex-wrap border border-yellow-600 self-center  w-[400px] sm:w-[600px] pt-4 pl-4 pb-[200px] sm:pb-[300px] rounded-md placeholder:font-Azeret  font-Azeret text-gray-700 placeholder:text-[12px] placeholder:sm:text-[16px] outline-none focus:outline-none focus:ring-2 focus:ring-yellow-600 focus:border-transparent resize-none"
         />
         <div className=" flex justify-center">
-          <Submit_Btn />
+          <Submit_Btn onClick={onNavigate} />
         </div>
       </form>
 

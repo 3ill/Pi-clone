@@ -2,10 +2,17 @@ import React from 'react';
 import { useFormStatus } from 'react-dom';
 import { Lock } from 'lucide-react';
 
-const Submit_Btn = () => {
+interface Submit_BtnProps {
+  onClick: () => void;
+}
+
+const Submit_Btn: React.FC<Submit_BtnProps> = ({ onClick }) => {
   const { pending } = useFormStatus();
   return (
-    <button className="bg-white border-2 border-purple-600 group hover:bg-purple-600 hover:scale-110 active:scale-105 transition-all duration-200 rounded-lg p-2 items-center  w-[fit-content]">
+    <button
+      onClick={onClick}
+      className="bg-white border-2 border-purple-600 group hover:bg-purple-600 hover:scale-110 active:scale-105 transition-all duration-200 rounded-lg p-2 items-center  w-[fit-content]"
+    >
       {pending ? (
         <div className="h-5 w-5 animate-spin rounded-full border-b-2 border-purple-600"></div>
       ) : (
