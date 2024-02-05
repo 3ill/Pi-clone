@@ -124,7 +124,18 @@ const Navbar = () => {
     >
       {!searchClicked ? (
         <AnimatePresence>
-          <motion.nav className="padding-x py-4 flex flex-row  items-center  ">
+          <motion.nav
+            variants={variants}
+            initial="hidden"
+            whileInView="visible"
+            exit="hidden"
+            transition={{
+              delay: 0.1,
+              ease: 'easeInOut',
+              duration: 0.5,
+            }}
+            className="padding-x py-4 flex flex-row  items-center  "
+          >
             <a
               href="/"
               className=" hover:scale-105 active:scale-100 transition-all duration-200 hover:text-white cursor-pointer"
