@@ -5,10 +5,6 @@ type ChildrenProps = {
 };
 
 const Layout = ({ children }: ChildrenProps) => {
-  return (
-    <section className="flex justify-center bg-white font-work ">
-      {children}
-    </section>
-  );
+  return <section className="flex  bg-white font-work ">{children}</section>;
 };
 export default Layout;
