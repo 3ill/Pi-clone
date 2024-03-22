@@ -59,7 +59,7 @@ const Page = () => {
                   ease: 'easeInOut',
                   duration: 0.5,
                 }}
-                className="flex flex-row items-center  justify-between gap-4 sm:gap-[300px] lg:gap-[700px] relative "
+                className="flex flex-row items-center  justify-between gap-8 sm:gap-[300px] lg:gap-[700px] relative "
               >
                 <Image
                   src="/piLogo.png"
