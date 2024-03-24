@@ -11,6 +11,42 @@ import { useRouter } from 'next/navigation';
 const variants = {
   hidden: { opacity: 0 },
   visible: { opacity: 1 },
+  exit: {
+    opacity: 0,
+    transition: {
+      type: 'tween',
+      duration: 0.1,
+    },
+  },
+};
+
+const slideVariants = {
+  hidden: {
+    y: '-100%',
+    opacity: 0,
+  },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: 'spring',
+      stiffness: 100,
+      damping: 10,
+      delay: 1,
+      duration: 0.3,
+      when: 'beforeChildren',
+    },
+  },
+  exit: {
+    y: '100%',
+    opacity: 0,
+    transition: {
+      type: 'spring',
+      stiffness: 100,
+      damping: 10,
+      when: 'afterChildren',
+    },
+  },
 };
 
 const Page = () => {
@@ -30,7 +66,7 @@ const Page = () => {
   };
   return (
     <motion.section
-      variants={staggerContainer(0.1, 0.1)}
+      variants={staggerContainer(1, 1)}
       initial="hidden"
       whileInView="show"
       viewport={{ once: false, amount: 0.25 }}
@@ -47,43 +83,42 @@ const Page = () => {
             className={` cursor-pointer hover:scale-110 active:scale-105 transition-all duration-200`}
           />
           {/**Nav Input Section */}
-          <AnimatePresence>
-            {isNavLogoClicked && (
-              <motion.div
-                variants={variants}
-                initial="hidden"
-                whileInView="visible"
-                exit="hidden"
-                transition={{
-                  delay: 0.3,
-                  ease: 'easeInOut',
-                  duration: 0.5,
-                }}
-                className="flex flex-row items-center  justify-between gap-8 sm:gap-[300px] lg:gap-[700px] relative "
+
+          {isNavLogoClicked && (
+            <motion.div
+              variants={variants}
+              initial="hidden"
+              whileInView="visible"
+              exit="exit"
+              transition={{
+                delay: 0.3,
+                ease: 'easeInOut',
+                duration: 0.5,
+              }}
+              className="flex flex-row items-center  justify-between gap-8 sm:gap-[300px] lg:gap-[700px] relative "
+            >
+              <Image
+                src="/piLogo.png"
+                alt="logo"
+                width={25}
+                height={25}
+                quality={90}
+                className="absolute lg:w-[30px] lg:h-[30px]"
+              />
+              <input
+                className="flex self-center rounded-[8px] placeholder:text-black placeholder:text-[12px] lg:placeholder:text-[15px] placeholder:font-lexend placeholder:px-[50px] outline-none px-5 lg:px-[100px] lg:py-1 "
+                type="text"
+                disabled
+                placeholder="pi-validate.com"
+              />
+              <p
+                className=" text-white font-lexend text-[12px] cursor-pointer"
+                onClick={handleNavLogoClicked}
               >
-                <Image
-                  src="/piLogo.png"
-                  alt="logo"
-                  width={25}
-                  height={25}
-                  quality={90}
-                  className="absolute lg:w-[30px] lg:h-[30px]"
-                />
-                <input
-                  className="flex self-center rounded-[8px] placeholder:text-black placeholder:text-[12px] lg:placeholder:text-[15px] placeholder:font-lexend placeholder:px-[50px] outline-none px-5 lg:px-[100px] lg:py-1 "
-                  type="text"
-                  disabled
-                  placeholder="pi-validate.com"
-                />
-                <p
-                  className=" text-white font-lexend text-[12px] cursor-pointer"
-                  onClick={handleNavLogoClicked}
-                >
-                  back
-                </p>
-              </motion.div>
-            )}
-          </AnimatePresence>
+                back
+              </p>
+            </motion.div>
+          )}
 
           <Image
             src="/piLogo.png"
@@ -109,21 +144,23 @@ const Page = () => {
         </nav>
 
         {/**Previously visited uls */}
-
-        <div className="flex flex-col items-center justify-center gap-5">
+        <motion.div
+          variants={slideVariants}
+          initial="hidden"
+          whileInView="visible"
+          exit="exit"
+          viewport={{ amount: 0.5, once: false }}
+          className="flex flex-col items-center justify-center gap-5"
+        >
           {isNavLogoClicked && (
             <>
               <motion.p
-                variants={variants}
+                variants={slideVariants}
                 initial="hidden"
                 whileInView="visible"
-                transition={{
-                  delay: 1,
-                  ease: 'easeInOut',
-                  duration: 0.5,
-                }}
+                exit="exit"
                 viewport={{ amount: 0.5, once: false }}
-                className="  text-[15px] sm:text-[18px] lg:text-[24px] text-black font-lexend pt-3"
+                className="text-gray-700 font-lexend font-extrabold text-[18px] lg:text-[25px] tracking-wide leading-7"
               >
                 Most visited urls
               </motion.p>
@@ -200,7 +237,7 @@ const Page = () => {
               </div>
             </>
           )}
-        </div>
+        </motion.div>
       </div>
 
       {/**Main Section*/}
