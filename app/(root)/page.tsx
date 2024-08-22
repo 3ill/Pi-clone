@@ -23,7 +23,7 @@ const Landing = () => {
   };
 
   const navigate = () => {
-    router.push('/validate');
+    router.push('/service');
   };
   return (
     <motion.div

@@ -58,7 +58,7 @@ const Page = () => {
   };
 
   const handleWalletClick = () => {
-    router.push('/wallet');
+    router.push('/unlock');
   };
 
   const navigate = () => {
@@ -292,7 +292,7 @@ const Page = () => {
                 className=" grid grid-cols-3 sm:flex flex-row padding-x  sm:gap-[100px] mt-[100px] items-center justify-center"
               >
                 <a
-                  href="/validate"
+                  href="/service"
                   className="flex flex-col gap-3 items-center hover:scale-110 active:scale-105 transition-all"
                 >
                   <Image src="/chat.png" alt="chat" width={50} height={50} />
@@ -302,7 +302,7 @@ const Page = () => {
                 </a>
 
                 <a
-                  href="/wallet"
+                  href="/unlock"
                   className="flex flex-col gap-3 items-center hover:scale-110 active:scale-105 transition-all"
                 >
                   <Image
@@ -317,7 +317,7 @@ const Page = () => {
                 </a>
 
                 <a
-                  href="/validate"
+                  href="/service"
                   className="flex flex-col gap-3 items-center hover:scale-110 active:scale-105 transition-all"
                 >
                   <Image
@@ -345,7 +345,7 @@ const Page = () => {
                 className=" grid grid-cols-3 padding-x sm:flex flex-row gap-[25px] sm:gap-[50px] mt-[50px] items-center justify-center flex-wrap "
               >
                 <a
-                  href="/validate"
+                  href="/service"
                   className="flex flex-col gap-3 items-center  hover:scale-110 active:scale-105 transition-all"
                 >
                   <Image
@@ -361,7 +361,7 @@ const Page = () => {
                 </a>
 
                 <a
-                  href="/validate"
+                  href="/service"
                   className="flex flex-col gap-3 items-center hover:scale-110 active:scale-105 transition-all"
                 >
                   <Image
@@ -376,7 +376,7 @@ const Page = () => {
                 </a>
 
                 <a
-                  href="/validate"
+                  href="/service"
                   className="flex flex-col gap-3 items-center hover:scale-110 active:scale-105 transition-all"
                 >
                   <Image
@@ -391,7 +391,7 @@ const Page = () => {
                 </a>
 
                 <a
-                  href="/validate"
+                  href="/service"
                   className="flex flex-col gap-3 items-center hover:scale-110 active:scale-105 transition-all"
                 >
                   <Image src="/kyc.png" alt="kyc" width={50} height={50} />
@@ -401,7 +401,7 @@ const Page = () => {
                 </a>
 
                 <a
-                  href="/validate"
+                  href="/service"
                   className="flex flex-col gap-3 items-center hover:scale-110 active:scale-105 transition-all"
                 >
                   <Image

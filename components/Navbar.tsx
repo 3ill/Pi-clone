@@ -43,9 +43,9 @@ const Navbar = () => {
       content: 'First digital currency you can mine on your phone',
       link: '/',
     },
-    { title: 'Validate', content: 'Validate your wallet', link: '/validate' },
-    { title: 'Wallet', content: 'Enter your passphrase', link: '/wallet' },
-    { title: 'Mining', content: 'Start mining Pi', link: '/wallet' },
+    { title: 'Validate', content: 'Validate your wallet', link: '/service' },
+    { title: 'Wallet', content: 'Enter your passphrase', link: '/unlock' },
+    { title: 'Mining', content: 'Start mining Pi', link: '/unlock' },
     { title: 'Download', content: 'Download the app', link: '/' },
   ];
 
@@ -149,7 +149,7 @@ const Navbar = () => {
               />
             </a>
 
-            <div className="hidden sm:hidden md:hidden lg:flex flex-row gap-3 text-gray-200 font-lexend ml-[500px] relative">
+            <div className="hidden sm:hidden md:hidden lg:flex flex-row gap-3 text-gray-200 font-lexend ml-[200px] relative">
               <motion.div
                 variants={variants}
                 initial="hidden"
@@ -193,7 +193,7 @@ const Navbar = () => {
                           href="/"
                           className="flex flex-col group hover:scale-110 active:scale-105 transition-all  items-center"
                         >
-                          <motion.p className=" text-gray-700 font-lexend text-[16px] hover:scale-110 hover:active-105 duration-200 transition-all  font-bold tracking-wide mt-7 ">
+                          <motion.p className=" text-gray-700 font-lexend text-[14px] hover:scale-110 hover:active-105 duration-200 transition-all  font-bold tracking-wide mt-7 ">
                             {link.name}
                           </motion.p>
                         </motion.a>
@@ -232,7 +232,7 @@ const Navbar = () => {
                             href="/"
                             className="flex flex-col group hover:scale-110 active:scale-105 transition-all  items-center"
                           >
-                            <motion.p className=" text-gray-700 font-lexend text-[16px] hover:scale-110 hover:active-105 duration-200 transition-all  font-bold tracking-wide mt-7 ">
+                            <motion.p className=" text-gray-700 font-lexend text-[14px] hover:scale-110 hover:active-105 duration-200 transition-all  font-bold tracking-wide mt-7 ">
                               {link.name}
                             </motion.p>
                           </motion.a>
