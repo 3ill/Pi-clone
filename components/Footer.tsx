@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className="flex flex-col bg-[#464646]  min-h-[200px] justify-between items-center padding-x py-5 w-full">
       <div className="flex flex-col sm:flex-row gap-[100px] lg:gap-[500px]">
-        <div className="flex flex-col gap-5 w-full">
+        <div className="flex flex-col gap-5 w-[fit-content]">
           {footerLinks1.map((link, index) => (
             <React.Fragment key={index}>
               <a
@@ -20,7 +20,7 @@ const Footer = () => {
           ))}
         </div>
 
-        <div className="flex flex-col gap-5 w-full ">
+        <div className="flex flex-col gap-5 w-[fit-content] ">
           {footerLinks2.map((link, index) => (
             <React.Fragment key={index}>
               <a
@@ -40,7 +40,7 @@ const Footer = () => {
             alt="Pi-Network"
             width={500}
             height={300}
-            className=" w-[300px] hidden lg:flex "
+            className=" object-cover hidden lg:flex "
           />
         </div>
       </div>
@@ -49,9 +49,9 @@ const Footer = () => {
         <Image
           src="/Pi-Network.webp"
           alt="Pi-Network"
-          width={500}
-          height={300}
-          className=" w-[300px] lg:hidden "
+          width={200}
+          height={200}
+          className=" object-contain lg:hidden "
         />
       </div>
     </footer>
