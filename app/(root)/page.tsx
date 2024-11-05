@@ -54,8 +54,8 @@ const Landing = () => {
           </motion.div>
         )}
       </AnimatePresence>
-      <div className="flex flex-row lg:min-h-screen padding-x bg-banner bg-cover bg-no-repeat ">
-        <div className="flex flex-col gap-3">
+      <div className="flex flex-row lg:min-h-screen padding-x bg-banner bg-cover bg-no-repeat relative ">
+        <div className="flex flex-col gap-3 z-40">
           <TitleText
             title="The First Digital Currency You Can Mine On Your Phone"
             textStyles="text-4xl w-[350px] sm:w-[600px] lg:w-[1300px] lg:text-6xl tracking-wide capitalize font-medium font-lexend pt-5 mt-[35px]"
@@ -91,7 +91,7 @@ const Landing = () => {
           alt="phone"
           width={500}
           height={500}
-          className="hidden lg:flex absolute left-[1370px] z-50  -top-[60px] "
+          className="hidden lg:flex absolute left-[1000px] z-30  -top-[60px] "
         />
       </div>
 

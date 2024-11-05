@@ -4,15 +4,15 @@ import Image from 'next/image';
 
 const Footer = () => {
   return (
-    <footer className="flex flex-col bg-[#464646]  min-h-[200px] justify-between items-center padding-x padding-y">
+    <footer className="flex flex-col bg-[#464646]  min-h-[200px] justify-between items-center padding-x py-5 w-full">
       <div className="flex flex-col sm:flex-row gap-[100px] lg:gap-[500px]">
-        <div className="flex flex-col gap-5 ">
+        <div className="flex flex-col gap-5 w-full">
           {footerLinks1.map((link, index) => (
             <React.Fragment key={index}>
               <a
                 href={link.link}
                 target="_blank"
-                className="text-[16px] font-work lg:text-[20px] hover:animate-pulse hover:text-gray-400 font-medium"
+                className="text-[16px] font-work hover:animate-pulse hover:text-gray-400 font-medium"
               >
                 {link.name}
               </a>
@@ -20,13 +20,13 @@ const Footer = () => {
           ))}
         </div>
 
-        <div className="flex flex-col gap-5 ">
+        <div className="flex flex-col gap-5 w-full ">
           {footerLinks2.map((link, index) => (
             <React.Fragment key={index}>
               <a
                 href={link.link}
                 target="_blank"
-                className="text-[16px] lg:text-[20px] hover:animate-pulse hover:text-gray-400 font-medium font-work"
+                className="text-[16px]  hover:animate-pulse hover:text-gray-400 font-medium font-work"
               >
                 {link.name}
               </a>
