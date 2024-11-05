@@ -120,7 +120,7 @@ const Navbar = () => {
       initial="hidden"
       whileInView="show"
       viewport={{ once: false, amount: 0.25 }}
-      className={`sticky top-0 z-50 shadow ${navbarColor} transition-all duration-400 `}
+      className={`sticky top-0 z-50 shadow ${navbarColor} transition-all duration-400 w-full`}
     >
       {!searchClicked ? (
         <AnimatePresence>
@@ -284,10 +284,12 @@ const Navbar = () => {
             </div>
 
             {/**Mobile nav */}
-            <div className="flex flex-row ml-[150px] md:ml-[500px] items-center lg:hidden  gap-7 ">
+            <div className={`flex w-full items-end justify-end`}>
+
+            <div className="flex flex-row  items-center lg:hidden  gap-7 ">
               <Search
                 color="white"
-                className="w-7 h-7 hover:scale-110 active:scale-105 transition-all "
+                className="w-5 h-5 sm:w-7 sm:h-7 hover:scale-110 active:scale-105 transition-all "
                 onClick={toggleSearch}
               />
               {hamburgerClicked ? (
@@ -303,7 +305,7 @@ const Navbar = () => {
                 >
                   <X
                     color="white"
-                    className="w-7 h-7 hover:scale-110 active:scale-105 transition-all "
+                    className="w-5 h-5 sm:w-7 sm:h-7 hover:scale-110 active:scale-105 transition-all "
                     onClick={toggleMobileNavigation}
                   />
                 </motion.div>
@@ -311,11 +313,12 @@ const Navbar = () => {
                 <motion.div>
                   <Menu
                     color="white"
-                    className="w-7 h-7 hover:scale-110 active:scale-105 transition-all "
+                    className="w-5 h-5 sm:w-7 sm:h-7 hover:scale-110 active:scale-105 transition-all "
                     onClick={toggleMobileNavigation}
                   />
                 </motion.div>
               )}
+            </div>
             </div>
           </motion.nav>
         </AnimatePresence>

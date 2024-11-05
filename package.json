@@ -10,11 +10,12 @@
   },
   "dependencies": {
     "@react-email/components": "^0.0.14",
+    "@tabler/icons-react": "^3.21.0",
     "clsx": "^2.1.0",
     "framer-motion": "^11.0.3",
     "fuse.js": "^7.0.0",
     "lucide-react": "^0.319.0",
-    "next": "14.1.0",
+    "next": "14.2.10",
     "react": "^18",
     "react-dom": "^18",
     "react-hot-toast": "^2.4.1",
